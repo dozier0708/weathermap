@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+
+
+
+
+{% block main %}
+
+<h1>{{ weather.event_headline }}</h1>
+<strong>Event type: {{ weather.event_type.event_type}}</strong>
+<p>{{ weather.event_description }}</p>
+
+{% endblock %}

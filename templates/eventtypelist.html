@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+
+
+
+
+{% block main %}
+<h1>Weather types</h1>
+<ul>
+{% for object in types %}
+<li><a href="{{ object.get_absolute_url}}">{{object.event_type }}</a></li>
+{% endfor %}</ul>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+
+
+
+
+{% block main %}
+<h1>Latest weather events</h1>
+<p>This site tracks weather!</p>
+<p>This is a second paragraph!</p>
+<ul>
+{% for object in weather %}
+<li><a href="{{ object.get_absolute_url}}">{{object.event_type.event_type}} on {{ object.event_start_date }}</a></li>
+{% endfor %}</ul>
+{% endblock %}

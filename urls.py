@@ -1,17 +1,11 @@
 from django.conf.urls.defaults import *
-
-# Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Example:
-    # (r'^weather/', include('weather.foo.urls')),
-
-    # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
-    # to INSTALLED_APPS to enable admin documentation:
-    # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    (r'^admin/', include(admin.site.urls)),
+    url(r'^$','weather.events.views.homepage'),
+    url(r'^weather/(?P<weather_id>\d+)/$', 'weather.events.views.detail'),
+    url(r'^types/$', 'weather.events.views.event_type_list'),
+    url(r'^types/(?P<type_id>\d+)/$', 'weather.events.views.event_type_detail'),
+    url(r'^admin/', include(admin.site.urls)),
 )
